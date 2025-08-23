@@ -29,6 +29,8 @@ We will study the leading computational and quantitative approaches for comparin
 - [HarvardX Biomedical Data Science](http://genomicsclass.github.io/book/)
 - [PLOS Computational Biology Translational Bioinformatics](http://collections.plos.org/translational-bioinformatics)
 - [Biostars Handbook](https://www.biostarhandbook.com/)
+- [JHU Deep Learning in Genomics Course](https://www.stephaniehicks.com/blog/course-deep-learning-genetics-genomics/)
+- [JHU Deep Learning in Genomics Reading Group](https://github.com/JHU-Deep-Learning-in-Genomics/Journal_Club)
 
 ## Related Textbooks
 - [Molecular Biology of the Gene (Watson et al)](https://www.amazon.com/Molecular-Biology-Gene-James-Watson/dp/0321762436/ref=pd_lpo_sbs_14_t_0?_encoding=UTF8&psc=1&refRID=R6A5BW06E5RJB7GVSNPY)
