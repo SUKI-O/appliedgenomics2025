@@ -31,6 +31,7 @@ We will study the leading computational and quantitative approaches for comparin
 - [Biostars Handbook](https://www.biostarhandbook.com/)
 - [JHU Deep Learning in Genomics Course](https://www.stephaniehicks.com/blog/course-deep-learning-genetics-genomics/)
 - [JHU Deep Learning in Genomics Reading Group](https://github.com/JHU-Deep-Learning-in-Genomics/Journal_Club)
+- [PyTorch Tutorial](https://hanfang.info/posts/2025/08/pytorch-comprehensive-tutorial/)
 
 ## Related Textbooks
 - [Molecular Biology of the Gene (Watson et al)](https://www.amazon.com/Molecular-Biology-Gene-James-Watson/dp/0321762436/ref=pd_lpo_sbs_14_t_0?_encoding=UTF8&psc=1&refRID=R6A5BW06E5RJB7GVSNPY)
