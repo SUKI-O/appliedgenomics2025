@@ -1,15 +1,18 @@
 ## Assignment 2: Genome Assembly
-Assignment Date: Monday, September 9, 2024 <br>
-Due Date: Monday, September 16, 2023 @ 11:59pm <br>
+Assignment Date: Wednesday, September 10, 2025 <br>
+Due Date: Wednesday, September 17, 2025 @ 11:59pm <br>
 
 ## Assignment Overview
 
-In this assignment, you will explore the steps for de novo genome assembly. This will start with constructing and analyzing the de Bruijn graph of reads using a short python/R script. Next we will evaluate the expected and observed coverage in a set of reads. These reads come from a mysterious pathogen that contains a secret message encoded someplace in the genome. The secret message will be recognizable as a novel insertion of sequence not found in the reference. Your task is to assess the quality of the reads, assemble the genome, identify, and decode the secret message. If all goes well the secret message should decode into a recognizable english text, otherwise double check your coordinates and try again. As a reminder, any questions about the assignment should be posted to [Piazza](https://piazza.com/jhu/fall2024/600449600649/home).
+In this assignment, you will explore the steps for comparing sequences and de novo genome assembly. This will start with evaluating the jaccard coeffient and modimizers to compare sequences. Then we will construct and analyze the de Bruijn graph of reads using a short python/R script. Next we will evaluate the expected and observed coverage in a set of reads. These reads come from a mysterious pathogen that contains a secret message encoded someplace in the genome. The secret message will be recognizable as a novel insertion of sequence not found in the reference. Your task is to assess the quality of the reads, assemble the genome, identify, and decode the secret message. If all goes well the secret message should decode into a recognizable english text, otherwise double check your coordinates and try again. As a reminder, any questions about the assignment should be posted to [Piazza](https://piazza.com/class/meogfdbmu7x7hf).
 
-For this assignment, we recommend you install and run the tools using [bioconda](https://www.nature.com/articles/s41592-018-0046-7). There are some tips below in the Resources section. Note on Mac, we highly recommend you install the x86_64 package even if you are using an M1/M2 chip.
+For this assignment, we recommend you install and run the tools using [bioconda](https://www.nature.com/articles/s41592-018-0046-7). There are some tips below in the Resources section. 
 
-### Question 1. de Bruijn Graph construction [10 pts]
-- Q1a. Write a script (in python, R, C++, etc) to draw the de Bruijn graph for the following reads using k=3 (assume all reads are from the forward strand, no sequencing errors, complete coverage of the genome). You may find [graphviz](https://graphviz.org/) to be helpful (see below).
+### Question 1. Sequence Comparison
+
+
+### Question 2. de Bruijn Graph construction [10 pts]
+- Q2a. Write a script (in python, R, C++, etc) to draw the de Bruijn graph for the following reads using k=3 (assume all reads are from the forward strand, no sequencing errors, complete coverage of the genome). You may find [graphviz](https://graphviz.org/) to be helpful (see below).
 
 ```
 ATTCA
@@ -27,24 +30,16 @@ TTCTT
 TTGAT
 ```
 
-- Q1b. Assume that the maximum number of occurrences of any 3-mer in the actual genome is 4 using the k-mers from Q1a. Write one possible genome sequence. Note this genome sequence may include sequences that are not supported by the underlying reads (this is the well known read decoherency problem for genome assembly).
+- Q2b. Assume that the maximum number of occurrences of any 3-mer in the actual genome is 4 using the k-mers from Q1a. Write one possible genome sequence. Note this genome sequence may include sequences that are not supported by the underlying reads (this is the well known read decoherency problem for genome assembly).
 
-- Q1c. What would it take to fully resolve the genome? [In a few sentences]
-
-
-#### Question 2. Coverage Analysis [20 pts]
-
-Download the reads and reference genome from: [https://github.com/schatzlab/appliedgenomics2024/raw/main/assignments/assignment2/asm.tgz](https://github.com/schatzlab/appliedgenomics2024/raw/main/assignments/assignment2/asm.tgz)
-
-Note we have provided both paired-end and mate-pairs reads (see included README for details). Make sure to look at all of the reads for the coverage analysis and kmer analysis, as well as in the assembly.
-
-- Question 2a. How long is the reference genome? [Hint: Try `samtools faidx`]
-- Question 2b. How many reads are provided and how long are they? Make sure to measure each file separately [Hint: Try `FastQC`]
-- Question 2c. How much coverage do you expect to have? [Hint: A little arthmetic]
-- Question 2d. Plot the average quality value across the length of the reads [Hint: Screenshot from `FastQC`]. Make 4 separate plots: frag1, frag2, mate1, mate2
+- Q2c. What would it take to fully resolve the genome? [In a few sentences]
 
 
 #### Question 3. Kmer Analysis [20 pts]
+
+Download the reads and reference genome from: [https://github.com/schatzlab/appliedgenomics2025/raw/main/assignments/assignment2/asm.tgz](https://github.com/schatzlab/appliedgenomics2025/raw/main/assignments/assignment2/asm.tgz)
+
+Note we have provided both paired-end and mate-pairs reads (see included README for details). Make sure to look at all of the reads for the coverage analysis and kmer analysis, as well as in the assembly.
 
 Use `jellyfish` to count the 21-mers in the reads data (all reads should be counted together). Make sure to use the "-C" flag to count cannonical kmers, otherwise your analysis will not correctly account for the fact that your reads come from either strand of DNA.
 
@@ -55,7 +50,7 @@ Use `jellyfish` to count the 21-mers in the reads data (all reads should be coun
 
 #### Question 4. De novo assembly [20 pts]
 
-Assemble the reads using `spades`. Spades will *not* run on Windows, you must use a linux/mac environment (The Ubuntu subsystem might work?). The assembly should complete in ~1 minute.
+Assemble the reads using `spades`. Spades will *not* run on Windows, you must use a linux/mac environment (The Ubuntu subsystem might work?). The assembly should complete in <1 minute.
 
 Note: N50 size is the size such that half of the total amount of bases are in contigs this size or larger (a weighted median). For example, if you have contig sizes of 10kbp, 5kb, 3kbp, 1kbp, 1kbp, 1kbp. The total size is 21kbp. Half of this value is 10.5kbp, so the N50 size is 5kbp. To compute the N50 value, sort the contigs from largest to small, and then iterative through until their cummulative span reaches 50% of the total span.
 
@@ -76,7 +71,7 @@ Use the `mummer` software tools to align your contigs to the reference genome. T
 
 ## Packaging
 
-The solutions to the above questions should be submitted as a single PDF document that includes your name, email address, and all relevant figures (as needed). If you use ChatGPT for any of the code, also record the prompts used. Submit your solutions by uploading the PDF to [GradeScope](https://www.gradescope.com/courses/839343), and remember to select where in your submission each question/subquestion is. The Entry Code is: Z3J8YV. 
+The solutions to the above questions should be submitted as a single PDF document that includes your name, email address, and all relevant figures (as needed). If you use ChatGPT for any of the code, also record the prompts used. Submit your solutions by uploading the PDF to [GradeScope](https://www.gradescope.com/courses/1097756), and remember to select where in your submission each question/subquestion is. The Entry Code is: GVXGV2. 
 
 If you submit after this time, you will use your late days. Remember, you are only allowed 4 late days for the entire semester!
 
@@ -85,9 +80,8 @@ If you submit after this time, you will use your late days. Remember, you are on
 
 #### [Bioconda](https://bioconda.github.io/) - Package manager for bioinformatics software
 
-On linux or mac I *highly* recommend that you use bioconda to install the packages rather than installing from source. 
-
-The easiest way to install conda is with [Miniconda](https://docs.conda.io/en/latest/miniconda.html). For M1 macs, you must use the x86 installation in emulation mode since  M1/arm support is still limited. For this you will use the "Rosette 2" subsystem that will convert M1 arm instructions into x86_64 on the fly. Rosette will be automatically installed when you go to run it. I also recommend using [mamba](https://github.com/mamba-org/mamba) instead of the default `conda` command for installing new packages:
+On linux, mac or windows I *highly* recommend that you use bioconda to install the packages rather than installing from source. The easiest way to install conda is with [Miniforge](https://github.com/conda-forge/miniforge). I also recommend using [mamba](https://github.com/mamba-org/mamba) instead of the default `conda` command for installing new packages. You can find the different
+versions avialable here [https://github.com/conda-forge/miniforge?tab=readme-ov-file#requirements-and-installers](https://github.com/conda-forge/miniforge?tab=readme-ov-file#requirements-and-installers)
 
 ```
 ## Replace MacOS-x86_64 with the version you downloaded from https://github.com/conda-forge/miniforge
@@ -104,13 +98,7 @@ $ conda config --set channel_priority strict
 Once bioconda is configured, all of the tools needed for this assignment except spades can be installed. Let's create a new environment with these tools:
 
 ```
-$ mamba create -n asn2 samtools bowtie bwa mummer4 kmer-jellyfish fastqc fastx_toolkit
-```
-
-Let's also create an environment for GraphViz which conflicts with other dependencies:
-
-```
-$ mamba create -n graphviz graphviz
+$ mamba create -n asn2 samtools bowtie bwa mummer4 kmer-jellyfish fastqc fastx_toolkit spades graphviz
 ```
 
 In order to use these environment, either run:
@@ -119,21 +107,12 @@ In order to use these environment, either run:
 $ mamba activate asn2
 ```
 
-or 
-
-```
-$ mamba activate graphviz
-```
 
 To deactivate an environment, run:
 
 ```
 $ mamba deactivate
 ```
-
-For spades, download the precompiled version from here (installing with conda is tricky because there are conflicts in the dependencies):
-[https://github.com/ablab/spades/releases/tag/v4.0.0](https://github.com/ablab/spades/releases/tag/v4.0.0)
-
 
 ### Graphview Tips
 
@@ -164,16 +143,6 @@ Alternatively use `dot`
 ![View dot Graph](dot.png)
 
 
-
-#### [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) - Raw read quality assessment
-
-```
-$ fastqc /path/to/reads.fq
-```
-
-If you have problems, make sure java is installed (`sudo apt-get install default-jre`)
-
-
 #### [Jellyfish](http://www.genome.umd.edu/jellyfish.html) - Fast Kmer Counting
 
 When counting kmers, make sure to count "canonical" kmers on both strands (-C):
@@ -195,13 +164,6 @@ Normally spades would try several values of k and merge the results together, bu
 $ spades.py --isolate --pe1-1 frag180.1.fq --pe1-2 frag180.2.fq --mp1-1 jump2k.1.fq --mp1-2 jump2k.2.fq -o asm -t 4 -k 31
 ```
 
-
-***Note: On mac you may need to run spades like this with the -m flag:***
-```
-$ spades.py --isolate -m 1024 --pe1-1 frag180.1.fq --pe1-2 frag180.2.fq --mp1-1 jump2k.1.fq --mp1-2 jump2k.2.fq -o asm -t 4 -k 31
-```
-
-
 #### [MUMmer4](https://github.com/mummer4/mummer) - Whole Genome Alignment
 
 ```
@@ -211,7 +173,6 @@ $ show-coords out.delta
 ```
 
 **WARNING: nucmer and related tools do not like it if/when you have spaces or special characters ('@') in the path to the binaries***
-
 
 #### [SAMTools](http://www.htslib.org/) - Extract part of a genome sequence using 'samtools faidx' (this will extract from contig_id bases 1234 through 5678)
 
