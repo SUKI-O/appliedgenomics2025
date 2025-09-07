@@ -8,7 +8,81 @@ In this assignment, you will explore the steps for comparing sequences and de no
 
 For this assignment, we recommend you install and run the tools using [bioconda](https://www.nature.com/articles/s41592-018-0046-7). There are some tips below in the Resources section. 
 
-### Question 1. Sequence Comparison
+### Question 1. Sequence Comparison [20 pts]
+
+For this question, you will work with a one megabase segment of human chromosome 22.
+
+Download, unzip it and extract one megabase segment from 20Mb to 21Mbp:
+```
+    wget https://github.com/schatzlab/appliedgenomics2025/raw/refs/heads/main/assignments/assignment1/chr22.fa.gz
+    gunzip chr22.fa.gz
+    samtools faidx chr22.fa
+    samtools faidx chr22.fa chr22:20000000-21000000 > chr22_orig.fa
+```
+
+- Q1a. Write a python script (sim_mutations.py) to read in a fasta file, introduce a specified level of mutations, and then output a new fasta file. The input (-i) and output (-o) filenames should be set on the command line as should the level of mutations (-m) and the random seed (-s). For mutations, only introduce substitutions by changing the input base to a different base at random. The substitutions should be inserted at random locations at the specified rate. For example "-m 0.015" should change 1.5% of the original bases.
+
+- Q1b. Now run the script using error rates 0.01, 0.05, 0.10 and 0.15 using three random seeds(e.g. 1, 2, 3), and compare the simulated mutation rate to the average identity (%IDY) computed by mummer. You may find this bash code helpful to evaluate all the runs. Note, with a mutation rate of 0.15 we expect the average identity to by 85%. Some deviation is expected because of rounding, plus mummer may choose to not extend an alignment to the very end of a sequence if there is a cluster of mutations
+
+```
+for rate in 0.01 0.05 0.10 0.15
+do
+    for seed in 1 2 3
+    do
+        if [ ! -r chr22_mut${rate}_s${seed}.fa ]
+        then
+            # introduce mutations
+            python3 sim_mutations.py -i chr22_orig.fa -o chr22_mut${rate}_s${seed}.fa -m ${rate} -s ${seed}
+            nucmer --mum -g 1000 -b 1000 -p chr22_orig_vs_mut${rate}_s${seed} chr22_orig.fa chr22_mut${rate}_s${seed}.fa
+            delta-filter -1 chr22_orig_vs_mut${rate}_s${seed}.delta > chr22_orig_vs_mut${rate}_s${seed}.1delta
+            show-coords -rcl chr22_orig_vs_mut${rate}_s${seed}.1delta > chr22_orig_vs_mut${rate}_s${seed}.coords
+        fi
+    done
+done
+
+head chr22_orig_vs_mut*.coords
+```
+
+- Q1c. Now write a python program to compute the Jaccard coefficient between two sequences specified with -a and -b using the specified kmer length (-k) Output the Jaccard coeffient, the ANI (computed by computing the kth root), and the approximate ANI computed using natural log. Convert any lowercase letters to uppercase, and convert any non-ACGT characters to N.
+
+- Q1d. Run your Jaccard coefficient program on all the simulated sequences. Output a table of filename, expected identity, jaccard, exact ANI, and approximate ANI. Comment on how well the ANI and approximate ANI compares to the expected level of mutation. You may find this bash code helpful to run everything.
+
+```
+for rate in 0.01 0.05 0.1 0.15
+do
+    for seed in 1 2 3
+    do
+        if [ ! -r jaccard_mut${rate}_s${seed}.txt ]
+        then
+            python compute_jaccard.py -a chr22_orig.fa -b chr22_mut${rate}_s${seed}.fa -k 21 > jaccard_mut${rate}_s${seed}.txt
+        fi
+    done
+done
+
+head jaccard_mut*.txt
+```
+
+- Q1e. Recall that modimizers are the subset of kmers such that "hash(kmer) % m == 0". Implement compute_jaccard_modimizer.py that extends your existing compute_jaccard.py code to only store and evaluate the modimizers in the sequences. The level of sampling should be set with the -m parameter. Also output the number of modimizers found in each sequence.  Note the default hash function in python is salted (it changes with every run), so instead use a stable function with zlib32 crc: `h = zlib.crc32(kmer.encode('utf-8')) & 0xffffffff`
+
+- Q1f. Now run your compute_jaccard_modimizers.py program using m=100 and m=1000 to output the jaccard, exact ANI, approximate ANI, and the number of modimizers found in each sequence. Comment on how well the modimizers approximate ANI values as found in Q1d as well as the amount of space needed to reach this level.
+
+```
+for rate in 0.01 0.05 0.1 0.15
+do
+    for seed in 1 2 3
+    do
+        for mod in 100 1000
+        do
+            if [ ! -r modimizers_mut${rate}_s${seed}_m${mod}.txt ]
+            then
+                python compute_jaccard_modimizer.py -a chr22_orig.fa -b chr22_mut${rate}_s${seed}.fa -k 21 -m $mod > modimizers_mut${rate}_s${seed}_m${mod}.txt
+            fi
+        done
+    done
+done
+
+head -100 modimizers_mut*.txt
+```
 
 
 ### Question 2. de Bruijn Graph construction [10 pts]
