@@ -172,7 +172,7 @@ $ conda config --set channel_priority strict
 Once bioconda is configured, all of the tools needed for this assignment except spades can be installed. Let's create a new environment with these tools:
 
 ```
-$ mamba create -n asn2 samtools bowtie bwa mummer4 kmer-jellyfish fastqc fastx_toolkit spades graphviz numpy
+$ mamba create -n asn2 samtools bowtie bwa mummer4 kmer-jellyfish spades graphviz numpy
 ```
 
 In order to use these environment, either run:
