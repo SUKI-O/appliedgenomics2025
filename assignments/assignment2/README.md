@@ -62,7 +62,7 @@ done
 head jaccard_mut*.txt
 ```
 
-- Q1e. Recall that modimizers are the subset of kmers such that "hash(kmer) % m == 0". Implement compute_jaccard_modimizer.py that extends your existing compute_jaccard.py code to only store and evaluate the modimizers in the sequences. The level of sampling should be set with the -m parameter. Also output the number of modimizers found in each sequence.  Note the default hash function in python is salted (it changes with every run), so instead use a stable function with zlib32 crc: `h = zlib.crc32(kmer.encode('utf-8')) & 0xffffffff`
+- Q1e. Recall that modimizers are the subset of kmers such that `hash(kmer) % m == 0`. Implement compute_jaccard_modimizer.py that extends your existing compute_jaccard.py code to only store and evaluate the modimizers in the sequences. The level of sampling should be set with the -m parameter. Also output the number of modimizers found in each sequence.  Note the default hash function in python is salted (it changes with every run), so instead use a stable function with zlib32 crc: `hash = zlib.crc32(kmer.encode('utf-8')) & 0xffffffff`
 
 - Q1f. Now run your compute_jaccard_modimizers.py program using m=100 and m=1000 to output the jaccard, exact ANI, approximate ANI, and the number of modimizers found in each sequence. Comment on how well the modimizers approximate ANI values as found in Q1d as well as the amount of space needed to reach this level.
 
