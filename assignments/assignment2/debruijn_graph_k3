@@ -1,0 +1,29 @@
+// De Bruijn Graph (k=3)
+digraph {
+	ATT
+	CAT
+	CTT
+	GAT
+	TAT
+	TCA
+	TCT
+	TGA
+	TTA
+	TTC
+	TTG
+	TTT
+	ATT -> TTC
+	ATT -> TTG
+	ATT -> TTT
+	CAT -> ATT
+	CTT -> TTA
+	GAT -> ATT
+	TAT -> ATT
+	TCA -> CAT
+	TCT -> CTT
+	TGA -> GAT
+	TTA -> TAT
+	TTC -> TCA
+	TTC -> TCT
+	TTG -> TGA
+}

@@ -1,0 +1,96 @@
+- STAGE: Before start
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Before_start_4E9IBH7HGTNNJTFE78G288P5U9ICWV9Z
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: before_start
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Assembling_M8N4QONKR50W2DXTIZH1HONGOVJQAYLD
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: as_start
+- STAGE: K31
+  args:
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/K31/configs/config.info
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/K31/configs/isolate_mode.info
+  config_dir: K31
+  del_after: []
+  job_uuid: hpcSPAdes_K31_58YVLSZXI3D6ZPE5B6E23GU9E5S3XDF8
+  mpi_support: true
+  output_files: []
+  path: /Users/suki/miniforge3/envs/asn2/bin/{spades_core}
+  short_name: k31
+- STAGE: Copy files
+  args:
+  - /Users/suki/miniforge3/envs/asn2/share/spades/spades_pipeline/scripts/copy_files.py
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/K31/before_rr.fasta
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/before_rr.fasta
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/K31/assembly_graph_after_simplification.gfa
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/assembly_graph_after_simplification.gfa
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/K31/final_contigs.fasta
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/contigs.fasta
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/K31/first_pe_contigs.fasta
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/first_pe_contigs.fasta
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/K31/strain_graph.gfa
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/strain_graph.gfa
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/K31/scaffolds.fasta
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/scaffolds.fasta
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/K31/scaffolds.paths
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/scaffolds.paths
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/K31/assembly_graph_with_scaffolds.gfa
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/assembly_graph_with_scaffolds.gfa
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/K31/assembly_graph.fastg
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/assembly_graph.fastg
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/K31/final_contigs.paths
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/contigs.paths
+  config_dir: ''
+  del_after:
+  - .bin_reads
+  - tmp/spades_af5f4gz_
+  job_uuid: SPAdes_Copy_files_7BSVP8Y4BI5CC30G0CWWCIZOWQZJJTH9
+  mpi_support: false
+  output_files: []
+  path: /Users/suki/miniforge3/envs/asn2/bin/python3
+  short_name: copy_files
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Assembling_J9K8GSQ52GQ4WDEIT36P6595Q0J37M6E
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: as_finish
+- STAGE: Breaking scaffolds
+  args:
+  - /Users/suki/miniforge3/envs/asn2/share/spades/spades_pipeline/scripts/breaking_scaffolds_script.py
+  - --result_scaffolds_filename
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/scaffolds.fasta
+  - --misc_dir
+  - /Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/misc
+  - --threshold_for_breaking_scaffolds
+  - '3'
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Breaking_scaffolds_I8LUMS61B0W2T5CGGONXDBMP81QTREC8
+  mpi_support: false
+  output_files: []
+  path: /Users/suki/miniforge3/envs/asn2/bin/python3
+  short_name: bs
+- STAGE: Terminate
+  args: []
+  config_dir: ''
+  del_after:
+  - configs
+  job_uuid: SPAdes_Terminate_DQD3HY7E32CFFZRL7P5W3MM9LKD5ULO5
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: terminate

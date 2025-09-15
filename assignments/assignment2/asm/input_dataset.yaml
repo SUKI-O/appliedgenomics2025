@@ -1,0 +1,14 @@
+- "left reads":
+  - "/Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/frag180.1.fq"
+  "number": !!int "1"
+  "orientation": "fr"
+  "right reads":
+  - "/Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/frag180.2.fq"
+  "type": "paired-end"
+- "left reads":
+  - "/Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/jump2k.1.fq"
+  "number": !!int "1"
+  "orientation": "rf"
+  "right reads":
+  - "/Users/suki/Projects/appliedgenomics2025/assignments/assignment2/asm/jump2k.2.fq"
+  "type": "mate-pairs"

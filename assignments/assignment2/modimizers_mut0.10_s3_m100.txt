@@ -1,0 +1,8 @@
+K=21, M=100
+|A modimizers| = 9290
+|B modimizers| = 9927
+|A ∩ B|   = 1140
+|A ∪ B|   = 18077
+Jaccard  = 0.063064
+ANI (kth-root) = 0.876691
+ANI (ln approx) = 0.876691

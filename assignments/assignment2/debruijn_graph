@@ -1,0 +1,23 @@
+// De Bruijn Graph
+digraph {
+	CA
+	GA
+	CT
+	TC
+	TT
+	TA
+	TG
+	AT
+	TA -> AT
+	TC -> CT
+	TT -> TA
+	TG -> GA
+	TC -> CA
+	CA -> AT
+	CT -> TT
+	TT -> TT
+	TT -> TG
+	TT -> TC
+	GA -> AT
+	AT -> TT
+}

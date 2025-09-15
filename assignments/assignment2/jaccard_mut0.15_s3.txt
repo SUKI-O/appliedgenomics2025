@@ -1,0 +1,8 @@
+K=21
+|A k-mers| = 928985
+|B k-mers| = 999039
+|A ∩ B|   = 34732
+|A ∪ B|   = 1893292
+Jaccard  = 0.018345
+ANI (kth-root) = 0.826628
+ANI (ln approx) = 0.826628
