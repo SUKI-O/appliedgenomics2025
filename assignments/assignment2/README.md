@@ -104,7 +104,7 @@ TTCTT
 TTGAT
 ```
 
-- Q2b. Assume that the maximum number of occurrences of any 3-mer in the actual genome is 4 using the k-mers from Q1a. Write one possible genome sequence. Note this genome sequence may include sequences that are not supported by the underlying reads (this is the well known read decoherency problem for genome assembly).
+- Q2b. Assume that the maximum number of occurrences of any 3-mer in the actual genome is 4 using the k-mers from Q2a. Write one possible genome sequence. Note this genome sequence may include sequences that are not supported by the underlying reads (this is the well known read decoherency problem for genome assembly).
 
 - Q2c. What would it take to fully resolve the genome? [In a few sentences]
 
@@ -130,7 +130,7 @@ Note: N50 size is the size such that half of the total amount of bases are in co
 
 - Question 4a. How many contigs were produced? [Hint: try `grep -c '>' contigs.fasta`]
 - Question 4b. What is the total length of the contigs? [Hint: try `samtools faidx`, plus a short script/excel]
-- Question 4c. What is the size of your large contig? [Hint: check `samtools faidx` plus `sort -n`]
+- Question 4c. What is the size of your largest contig? [Hint: check `samtools faidx` plus `sort -n`]
 - Question 4d. What is the contig N50 size? [Hint: Write a short script, or use excel]
 
 #### Question 5. Finding and decoding the insertion [20 pts]
@@ -140,7 +140,7 @@ Use the `mummer` software tools to align your contigs to the reference genome. T
 - Question 5b. What is the position of the insertion on the reference? [Hint: try `show-coords`]
 - Question 5c. How long is the novel insertion? [Hint: try `show-coords`]
 - Question 5d. What is the DNA sequence of the encoded message? [Hint: try `samtools faidx` to extract the insertion]
-- Question 5e. What is the secret message? [Hint: run `dna-decode.py -d --input message.fa` to decode the string from 5c. If needed use the `--rev_comp` to reverse complement the sequence:]
+- Question 5e. What is the secret message? [Hint: run `dna-decode.py -d --input message.fa` to decode the string from 5d. If needed use the `--rev_comp` to reverse complement the sequence:]
 
 
 ## Packaging
