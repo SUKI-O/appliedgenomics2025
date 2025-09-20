@@ -92,11 +92,11 @@ To answer the following questions, you will need to run several alignment and va
 
 - 4a. You are able to narrow down the SNP to a specific region in chromosome 11. Using bowtie2, align their FASTQ files to the provided reference file. How many reads does each file have and how many are successfully mapped? [Hint: Use `samtools flagstat`.] 
 
-- 4b. How many SNPs and indels does each file have? [Hint: Sort the SAM file first. Then, call variants with `freebayes`. Summarize using `bcftools stats`.]
+- 4b. How many high confidence SNPs and indels does each file have? [Hint: Sort the SAM file first. Then, call variants with `freebayes`. Then filter for the variant quality to be at least 30 and normalize using `bcftools`. Summarize using `bcftools stats`.]
 
-- 4c. You now know which SNPs and indels each friend has. However, you want to know which variant they all share. How many variants are shared between all three friends? [Hint: Use `bcftools isec` after normalizing the variants.]
+- 4c. You now know which SNPs and indels each friend has. However, you want to know which variant they all share. How many variants are shared between all three friends? [Hint: Use `bcftools isec` after filtering and normalizing the variants.]
 
-- 4d. Between the variants shared between all three friends, which is likeliest to cause a phenotype of interest? [Hint: The variant should be homozygous in all 3 samples. You can search for variants at a certain chromosome and position at https://www.ncbi.nlm.nih.gov/snp/advanced/. Remember, the position in the intersected VCF is the position within the region we're looking at, so you will have to find the starting location of the region! Use `bcftools view -i 'GT="1/1"' PREFIX.vcf` to filter for the correct genotype.]
+- 4d. Between the variants shared between all three friends, which is likeliest to cause a phenotype of interest? [Hint: The variant should be homozygous in all 3 samples and will be in a gene that has a function related to taste. You can search for variants at a certain chromosome and position at https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38. Remember, the position in the intersected VCF is the position within the region we're looking at, so you will have to find the starting location of the region by shifting over by 5868417! Use `bcftools view -i 'GT="1/1"' PREFIX.vcf` to filter for the correct genotype.]
 
 - 4e. What is the phenotype? [Hint: Search the name of the gene associated with the variant you found in 4d.]
 
@@ -116,7 +116,7 @@ If you submit after this time, you will use your late days. Remember, you are on
 
 ```
 ## Install bowtie2 and samtools via mamba/conda
-$ mamba create -n assignment3 bowtie2 samtools
+$ mamba create -n assignment3 bowtie2 samtools freebayes bcftools
 $ mamba activate assignment3
 
 ## Build a bowtie2 index (BWT)
@@ -125,27 +125,29 @@ $ bowtie2-build ref.fa ref
 ## Now align reads, sort, and compute alignment stats
 $ bowtie2 -x ref -1 PREFIX.1.fq -2 PREFIX.2.fq -S PREFIX.sam
 $ samtools sort PREFIX.sam -o PREFIX.bam
-$ samtools stats PREFIX.bam > PREFIX.stats
+$ samtools flagstat PREFIX.bam > PREFIX.flagstat
 ```
 
 
 #### [FreeBayes](https://github.com/ekg/freebayes) - Small variant identification
 
 ```
-$ mamba install freebayes
+## run freebayes of the sorted alignments against the reference
 $ freebayes -f ref.fa PREFIX.bam > PREFIX.vcf
 ```
 
 #### [bcftools](https://samtools.github.io/bcftools/bcftools.html) - VCF summary
 
 ```
-$ mamba install bcftools
-$ bcftools stats PREFIX.vcf > PREFIX.vcf.stats
+## filter, normalize, and compute stats
+$ bcftools view -i 'QUAL>=30' PREFIX.vcf -Oz -o PREFIX.filtered.vcf
+$ bcftools norm -f ref.fa PREFIX.filtered.vcf > PREFIX.norm.vcf
+$ bcftools stats PREFIX.norm.vcf > PREFIX.norm.vcf.stats
 
-## normalize, compress, and index the variants before comparing
-$ bcftools norm -f ref.fa PREFIX.vcf > PREFIX.norm.vcf
+## Compress and index the variants
 $ bgzip PREFIX.norm.vcf
 $ bcftools index PREFIX.norm.vcf.gz
-...
+
+## Now compare the variants in the three samples
 $ bcftools isec PREFIX1.norm.vcf.gz PREFIX2.norm.vcf.gz PREFIX3.norm.vcf.gz -p norm -n=3
 ```
