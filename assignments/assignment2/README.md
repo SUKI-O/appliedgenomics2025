@@ -157,6 +157,8 @@ If you submit after this time, you will use your late days. Remember, you are on
 On linux, mac or windows I *highly* recommend that you use bioconda to install the packages rather than installing from source. The easiest way to install conda is with [Miniforge](https://github.com/conda-forge/miniforge). I also recommend using [mamba](https://github.com/mamba-org/mamba) instead of the default `conda` command for installing new packages. You can find the different
 versions avialable here [https://github.com/conda-forge/miniforge?tab=readme-ov-file#requirements-and-installers](https://github.com/conda-forge/miniforge?tab=readme-ov-file#requirements-and-installers)
 
+If you are using Windows, you will first need to install the [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install). This will include many standard unix tools, plus give you what you need to run mamba/conda.
+
 ```
 ## Replace MacOS-x86_64 with the version you downloaded from https://github.com/conda-forge/miniforge
 $ chmod +x ./Miniforge-MacOSX-x86_64.sh
