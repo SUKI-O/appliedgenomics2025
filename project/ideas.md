@@ -101,6 +101,8 @@ If any of these are not available/finalized, your project will not be successful
 
 7. Investigate the rate of heterozygosity within and among human populations using consortium data. [Variation in Heterozygosity Predicts...](http://journals.plos.org/plosone/article/figure?id=10.1371/journal.pone.0063048.g001)
 
+8. Fine tune a LLM for disease risk prediction or other tasks [Fine tuning review](https://pmc.ncbi.nlm.nih.gov/articles/PMC12108693/), [DT-GPT](https://www.nature.com/articles/s41746-025-02004-3)
+
 
 ## CS Theory and Systems
 
@@ -146,6 +148,7 @@ Pointers to open access data sets to help get you started!
 - GTEx: variants and expression data from ~1000 people in dozens of tissues (raw data is protected, but expression levels are open access): https://gtexportal.org/home/
 - ICGC Data portal: somatic variants (open) and germline variants (protect) in many patients: https://dcc.icgc.org/
 - SG-NEx: long read RNAseq data from many samples: https://github.com/GoekeLab/sg-nex-data
+- All of Us Researcher Workbench: Genomics, EHR, and other data from hundreds of thousands of people: https://www.researchallofus.org/data-tools/workbench/
 
 ### Dog
 - Darwin's Ark: VCF file from >600 varieties of dogs: https://www.science.org/doi/10.1126/science.abk0639; https://data.broadinstitute.org/DogData/
