@@ -64,7 +64,7 @@ If any of these are not available/finalized, your project will not be successful
 3. Develop methods to identify genome variants from RNAseq data, apply to individuals with many tissues profiled to identify somatic mutations:
 [SNPiR](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3791257/)
 
-4. Run ChommHMM/Segway on a phased diploid genome (NA12878) and evaluate how that compares to annotating the reference genome:
+4. Run ChromHMM/Segway on a phased diploid genome (NA12878) and evaluate how that compares to annotating the reference genome:
 [ChromHMM](http://www.nature.com/nmeth/journal/v9/n3/full/nmeth.1906.html)
 
 5. Run ChromHMM/Segway on a non-human species such as rice or arabidopsis:
@@ -101,7 +101,7 @@ If any of these are not available/finalized, your project will not be successful
 
 7. Investigate the rate of heterozygosity within and among human populations using consortium data. [Variation in Heterozygosity Predicts...](http://journals.plos.org/plosone/article/figure?id=10.1371/journal.pone.0063048.g001)
 
-8. Fine tune a LLM for disease risk prediction or other tasks [Fine tuning review](https://pmc.ncbi.nlm.nih.gov/articles/PMC12108693/), [DT-GPT](https://www.nature.com/articles/s41746-025-02004-3)
+8. Fine tune an LLM for disease risk prediction or other tasks [Fine tuning review](https://pmc.ncbi.nlm.nih.gov/articles/PMC12108693/), [DT-GPT](https://www.nature.com/articles/s41746-025-02004-3)
 
 
 ## CS Theory and Systems
