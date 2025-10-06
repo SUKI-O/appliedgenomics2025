@@ -64,13 +64,13 @@ If any of these are not available/finalized, your project will not be successful
 3. Develop methods to identify genome variants from RNAseq data, apply to individuals with many tissues profiled to identify somatic mutations:
 [SNPiR](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3791257/)
 
-4. Run ChromHMM/Segway on a phased diploid genome (NA12878) and evaluate how that compares to annotating the reference genome:
+4. Run ChromHMM/Segway/ChromBPNet on a phased diploid genome (NA12878) and evaluate how that compares to annotating the reference genome:
 [ChromHMM](http://www.nature.com/nmeth/journal/v9/n3/full/nmeth.1906.html)
 
-5. Run ChromHMM/Segway on a non-human species such as rice or arabidopsis:
+5. Run ChromHMM/Segway/ChromBPNet on a non-human species such as rice or arabidopsis:
 [ChromHMM](http://www.nature.com/nmeth/journal/v9/n3/full/nmeth.1906.html), [Segway Protocol](http://biorxiv.org/content/early/2016/10/17/080382)
 
-6. Develop ChromHMM/Segway postprocessing algorithm to label the states with their biological functions:
+6. Develop ChromHMM/Segway/ChromBPNet postprocessing algorithm to label the states with their biological functions:
 [Segway Protocol](http://biorxiv.org/content/early/2016/10/17/080382)
 
 7. Explore how single cell analysis works with minimal amounts of coverage. For example, reproduce the results from the Monocle paper, and experiment with how well it performs using lower amounts of coverage:
