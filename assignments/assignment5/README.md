@@ -1,4 +1,4 @@
-## Assignment 5: Convlutional Neural Networks
+## Assignment 5: Convolutional Neural Networks and Transformers
 Assignment Date: Wednesday, October 29, 2024 <br>
 Due Date: Friday, November 7 @ 11:59pm <br>
 
@@ -26,7 +26,7 @@ You will need to add the following cells to the top of the notebook in Google Co
 !pip install enformer-pytorch
 ```
 
-Because of the way Google Colab works, you will need to install these everytime you reopen the notebook. 
+Because of the way Google Colab works, you will need to install these every time you reopen the notebook. 
 
 As a reminder, any questions about the assignment should be posted to [Piazza](https://piazza.com/class/meogfdbmu7x7hf#).
 
