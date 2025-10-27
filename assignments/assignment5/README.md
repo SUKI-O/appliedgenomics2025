@@ -10,7 +10,7 @@ For this assignment, you will create the environment as follows:
 
 `mamba create -n asn5 python=3.10 scikit-learn pytorch matplotlib pandas numpy jupyter seaborn kipoiseq logomaker`
 
-If installation fails due to "warning: libmamba - Problem type not implemented SOLVER_RULE_STRICT_REPO_PRIORITY", try running:
+If installation fails due to "warning: libmamba - Problem type not implemented SOLVER_RULE_STRICT_REPO_PRIORITY", try running the following and then attempt the above command again:
 
 `conda config --set channel_priority flexible`
 
