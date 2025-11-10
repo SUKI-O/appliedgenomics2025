@@ -4,15 +4,13 @@
 Presentations will be a total of 9 minutes: 7 minutes for the presentation, followed by 2 minutes for questions. We will strictly keep to the schedule to ensure that all groups can present in class! 
 
 ## Schedule of Presentations
-
-
 | Slot | Day   | Start | Team                | Students                                                                | Title                                                                                                           |
 | ---- | ----- | ----- | ------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | 1    | 11/19 | 3:00  | Spatial Dynamics    | Dhanav Handa, Arijit Mahesh Kulkarni                                    | Learning Cellular Perturbation Dynamics in Foundation-Model Embedding Space via Neural Optimal Transport        |
 | 2    | 11/19 | 3:09  | V for Vogelsteins   | Suki Ogihara                                                            | Cost-Effective Cancer Diagnostic via Aneuploidy dection with RealSeqS                                           |
 | 3    | 11/19 | 3:18  | Iso-Scope           | Sai Dharmasena                                                          | Iso-Scope: Benchmarking Gene Isoform Inference Methods for Single-Cell Data                                     |
 | 4    | 11/19 | 3:27  | MTeam               | Malavika Nair                                                           | Assessing Data Completeness in Variant Pathogenicity Prediction                                                 |
-| 5    | 11/19 | 3:36  | Yolks to Folks      | Megan Miller                                                            | Searching for Genetic Signatures and Constraints of Viviparity                                                  |
+| 5    | 11/19 | 3:36  | Team Causality      | Ziwei Jiang, Zihan Zhou                                                 | Causal Representation Learning for Gene Expression                                                              |
 | 6    | 11/19 | 3:45  | Relish              | Reena Assassa, Lillianna Gund, Shaun Ku                                 | Comparing Genomic LLM Variant Pathogenicity Predictions with Established In-Silico Scores                       |
 | 7    | 11/19 | 3:54  | Kmer-Bin matrix     | Zhuolun (Julian) Du                                                     | A Probabilistic Approach to Hi-C Sequence Localization                                                          |
 | 8    | 11/19 | 4:03  | Team KMErs          | Emily Sanchez Ocotlan, Maria Valverde-Cervantes, Kinverli Garcia Osorio | GenoViz: An Interactive Dashboard for Comparative Visualization of Personal Genomic Data                        |
@@ -21,7 +19,7 @@ Presentations will be a total of 9 minutes: 7 minutes for the presentation, foll
 | 2    | 12/1  | 3:09  | AML Detection LLM   | Charlotte Cheung, Claire Cui                                            | Fine-tuning a Biomedical Language Model for Leukemia Subtype Prediction from Gene Expression Data               |
 | 3    | 12/1  | 3:18  | PrecisionMut        | Rongrong Yan                                                            | Benchmarking Non-coding Mutation Impact Prediction in Colorectal Cancers Using Multi-Method Functional Scores   |
 | 4    | 12/1  | 3:27  | Team RNN            | Alex Dong, Melody Jin, Katie Hong                                       | Identification of Bacterial Promotors                                                                           |
-| 5    | 12/1  | 3:36  | Team Causality      | Ziwei Jiang, Zihan Zhou                                                 | Causal Representation Learning for Gene Expression                                                              |
+| 5    | 12/1  | 3:36  | Yolks to Folks      | Megan Miller                                                            | Searching for Genetic Signatures and Constraints of Viviparity                                                  |
 | 6    | 12/1  | 3:45  | Team Chauhan        | Akshat Chauhan                                                          | Residual Variational Autoencoder for De Novo Design of Tumor-Specific Promoters                                 |
 | 7    | 12/1  | 3:54  | Julie X and Jason Z | Julie Xian, Jason Zavras                                                | Evolutionary origin of Human Disease Genes: A Comparative Genomics Approach                                     |
 | 8    | 12/1  | 4:03  | LettUCE Grow        | Xinyi Chen                                                              | Age vs Stress-induced inflammation: Universal Cell Embedding (UCE)-Based Comparative Profiling                  |
