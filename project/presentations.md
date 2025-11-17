@@ -11,9 +11,8 @@ Presentations will be a total of 9 minutes: 7 minutes for the presentation, foll
 | 3    | 11/19 | 3:18  | Iso-Scope           | Sai Dharmasena                                                          | Iso-Scope: Benchmarking Gene Isoform Inference Methods for Single-Cell Data                                     |
 | 4    | 11/19 | 3:27  | MTeam               | Malavika Nair                                                           | Assessing Data Completeness in Variant Pathogenicity Prediction                                                 |
 | 5    | 11/19 | 3:36  | Team Causality      | Ziwei Jiang, Zihan Zhou                                                 | Causal Representation Learning for Gene Expression                                                              |
-| 6    | 11/19 | 3:45  | Relish              | Reena Assassa, Lillianna Gund, Shaun Ku                                 | Comparing Genomic LLM Variant Pathogenicity Predictions with Established In-Silico Scores                       |
-| 7    | 11/19 | 3:54  | Kmer-Bin matrix     | Zhuolun (Julian) Du                                                     | A Probabilistic Approach to Hi-C Sequence Localization                                                          |
-| 8    | 11/19 | 4:03  | Team KMErs          | Emily Sanchez Ocotlan, Maria Valverde-Cervantes, Kinverli Garcia Osorio | GenoViz: An Interactive Dashboard for Comparative Visualization of Personal Genomic Data                        |
+| 6    | 11/19 | 3:45  | Kmer-Bin matrix     | Zhuolun (Julian) Du                                                     | A Probabilistic Approach to Hi-C Sequence Localization                                                          |
+| 7    | 11/19 | 3:54  | Team KMErs          | Emily Sanchez Ocotlan, Maria Valverde-Cervantes, Kinverli Garcia Osorio | GenoViz: An Interactive Dashboard for Comparative Visualization of Personal Genomic Data                        |
 |      |       |       |                     |                                                                         |                                                                                                                 |
 | 1    | 12/1  | 3:00  | Team Zadorozhny     | Nikola Zadorozhny                                                       | Fine-Tuning DNA Foundation Models for Variant Effect Prediction                                                 |
 | 2    | 12/1  | 3:09  | AML Detection LLM   | Charlotte Cheung, Claire Cui                                            | Fine-tuning a Biomedical Language Model for Leukemia Subtype Prediction from Gene Expression Data               |
@@ -31,6 +30,7 @@ Presentations will be a total of 9 minutes: 7 minutes for the presentation, foll
 | 5    | 12/3  | 3:36  | The Pink Helix      | Lauren Ji, Sofia Floody                                                 | Investigating the Rate of Heterozygosity and Breast Cancer Among Global Populations                             |
 | 6    | 12/3  | 3:45  | STalign2            | Iris Kwon, Smriti Grounder                                              | Improving STalign Accuracy by Incorporating Gene Expression                                                     |
 | 7    | 12/3  | 3:54  | Chroma-Chrunchers   | Martin Hilser                                                           | How Little Detail is Enough? Evaluating Chromatin-State Annotations Robustness Under Low-Coverage Sequencing    |
+| 8    | 12/3  | 4:03  | Relish              | Reena Assassa, Lillianna Gund, Shaun Ku                                 | Comparing Genomic LLM Variant Pathogenicity Predictions with Established In-Silico Scores                       |
 
 
 
